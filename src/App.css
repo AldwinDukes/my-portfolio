@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vivid-pink: #ff31ad;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui;
+}

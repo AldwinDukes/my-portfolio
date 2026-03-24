@@ -1,5 +1,4 @@
 import { MdOutlineLightMode } from "react-icons/md";
-import "../header/header.css";
 import PrimaryBtn from "../button/PrimaryBtn";
 
 export default function Header() {
@@ -7,11 +6,13 @@ export default function Header() {
     <>
       <div className="flex justify-between">
         <MdOutlineLightMode size={30} />
-        <nav className="flex justify-center items-center gap-x-4 navFont">
+        <nav className="flex justify-center items-center gap-x-4 font-sans font-semibold">
           <ul className="flex tracking-wide">
-            <li className="hoverColor px-4 cursor-pointer">HOME</li>
-            <li className="hoverColor px-4 cursor-pointer">ABOUT</li>
-            <li className="hoverColor px-4 cursor-pointer">CONTACT</li>
+            <li className="px-4 cursor-pointer hover:text-vivid-pink">HOME</li>
+            <li className="px-4 cursor-pointer hover:text-vivid-pink">ABOUT</li>
+            <li className="px-4 cursor-pointer hover:text-vivid-pink">
+              CONTACT
+            </li>
           </ul>
           <PrimaryBtn btnName="RESUME" />
         </nav>
