@@ -1,20 +1,20 @@
+// components
 import PrimaryBtn from "../button/PrimaryBtn";
 
 function Nav() {
   return (
     <>
-      <div className="flex justify-between">
-        <nav className="flex justify-center items-center gap-x-4 font-sans font-semibold">
-          <ul className="flex tracking-wide">
-            <li className="px-4 cursor-pointer hover:text-vivid-pink">HOME</li>
-            <li className="px-4 cursor-pointer hover:text-vivid-pink">ABOUT</li>
-            <li className="px-4 cursor-pointer hover:text-vivid-pink">
-              CONTACT
-            </li>
-          </ul>
+      <nav className="font-sans flex justify-center flex-col">
+        <ul className="flex justify-between items-center flex-col text-xl tracking-wide sm:max-md:block">
+          <li className="p-4">HOME</li>
+          <li className="p-4">ABOUT</li>
+          <li className="p-4">CONTACT</li>
+        </ul>
+
+        <div className="flex justify-center items-center mt-2">
           <PrimaryBtn btnName="RESUME" />
-        </nav>
-      </div>
+        </div>
+      </nav>
     </>
   );
 }
