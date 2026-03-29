@@ -4,7 +4,7 @@ import PrimaryBtn from "../button/PrimaryBtn";
 function Nav() {
   return (
     <>
-      <nav className="font-sans flex justify-center flex-col">
+      <nav className="font-sans flex justify-center flex-col font-semibold">
         <ul className="flex justify-between items-center flex-col text-xl tracking-wide sm:max-md:block">
           <li className="p-4">HOME</li>
           <li className="p-4">ABOUT</li>

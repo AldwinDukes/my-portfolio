@@ -15,9 +15,9 @@ function App() {
   return (
     <>
       <div className="App h-screen p-4" id={theme}>
-        <header className="flex justify-between">
+        <header className="flex justify-center items-center h-full">
           <button
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer absolute left-2 top-2"
             onClick={toggleTheme}
             aria-label="darkMode switch button"
           >
@@ -28,35 +28,33 @@ function App() {
             )}
           </button>
 
-          <button>
-            {isMenuOpen ? (
-              <IoCloseOutline
-                size={30}
-                onClick={() => setIsMenuOpen(false)}
-                aria-label="close menu button"
-              />
-            ) : (
-              <IoMenu
-                size={30}
-                onClick={() => setIsMenuOpen(true)}
-                aria-label="open menu button"
-              />
-            )}
-          </button>
+          <div className="flex justify-end absolute right-2 top-2">
+            <button>
+              {isMenuOpen ? (
+                <IoCloseOutline
+                  size={30}
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label="close menu button"
+                />
+              ) : (
+                <IoMenu
+                  size={30}
+                  onClick={() => setIsMenuOpen(true)}
+                  aria-label="open menu button"
+                />
+              )}
+            </button>
+          </div>
+
+          <div
+            className={`"flex justify-center h-[50%] w-full rounded-md bg-gray-600/30 backdrop-blur-sm" ${isMenuOpen ? "flex" : "hidden"}`}
+          >
+            <Nav />
+          </div>
         </header>
-        <div
-          className={`${isMenuOpen ? "flex" : "hidden"} "flex justify-center items-center"`}
-        >
-          <Nav />
-        </div>
       </div>
     </>
   );
 }
 
 export default App;
-
-// show the menu button and give it an onclick event pass the setMenuIsOpen
-// If menuIsOpen hide the menu icon and show the navbar : show and hide the navBar
-
-// TODO : center the nav
