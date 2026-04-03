@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 // components
 import Nav from "./components/header/Nav";
 import PrimaryBtn from "./components/button/PrimaryBtn";
+
 // icons
 import {
   MdOutlineLightMode,
@@ -83,12 +85,11 @@ function App() {
               I'm a junior web developer currently focusing in building and
               designing digital experiences.
             </p>
-            <button>
-              <PrimaryBtn btnName="CONTACT" />
-            </button>
+
+            <PrimaryBtn btnName="CONTACT" />
           </section>
 
-          <section>
+          <section className="mb-8">
             <hr className="text-vivid-pink mb-4" />
             <h2 className="font-bold mb-4 text-xl">About me</h2>
             <p className="mb-4">
@@ -116,6 +117,30 @@ function App() {
             </ul>
             <div className="border border-vivid-pink p-8">
               <img src="src\assets\profile.jpg" alt="profile-img" />
+            </div>
+          </section>
+
+          <section className="mb-8">
+            <hr className="text-vivid-pink mb-4" />
+            <h2 className="font-bold mb-4 text-xl">Some of my projects</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border border-vivid-pink p-16"></div>
+              <div className="border border-vivid-pink p-16"></div>
+              <div className="border border-vivid-pink p-16"></div>
+              <div className="border border-vivid-pink p-16"></div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="font-bold mb-4 text-xl text-center">
+              I'd love to Connect with You.
+            </h2>
+            <p className="text-center mb-2">
+              Let me get to know more about you.
+            </p>
+            <hr className="text-vivid-pink mb-8" />
+            <div className="flex justify-center">
+              <PrimaryBtn btnName="Get in touch" />
             </div>
           </section>
         </main>
