@@ -3,6 +3,7 @@ import { useState } from "react";
 // components
 import Nav from "./components/header/Nav";
 import PrimaryBtn from "./components/button/PrimaryBtn";
+import TextType from "./components/animation/typing";
 
 // icons
 import {
@@ -59,37 +60,62 @@ function App() {
             <Nav />
             <div className="flex mt-8 justify-center gap-4">
               <button className="p-3">
-                <IoLogoGithub size={24} />
+                <a href="http://github.com/AldwinDukes" target="_blank">
+                  <IoLogoGithub size={24} />
+                </a>
               </button>
 
               <button className="p-3">
-                <FaInstagram size={24} />
+                <a
+                  href="https://www.instagram.com/aldwindukes/"
+                  target="_blank"
+                >
+                  <FaInstagram size={24} />
+                </a>
               </button>
 
               <button className="p-3">
-                <MdEmail size={24} />
+                <a href="mailto:aldwindukes@gmail.com">
+                  <MdEmail size={24} />
+                </a>
               </button>
 
               <button className="p-3">
-                <FaLinkedin size={24} />
+                <a
+                  href="https://www.linkedin.com/in/aldwindukes/"
+                  target="_blank"
+                >
+                  <FaLinkedin size={24} />
+                </a>
               </button>
             </div>
           </div>
         </header>
 
         <main>
-          <section className="pt-8 mb-8">
+          <section className="pt-8 mb-8" id="home">
             <p className="text-vivid-pink mb-2">Hi, my name is</p>
             <h1 className="font-bold text-2xl mb-2">Aldwin Duque</h1>
-            <p className="mb-8">
-              I'm a junior web developer currently focusing in building and
-              designing digital experiences.
-            </p>
-
-            <PrimaryBtn btnName="CONTACT" />
+            <div className="mb-4 h-14">
+              <TextType
+                text={[
+                  "I'm a junior web developer currently focusing in building and designing digital experiences.",
+                ]}
+                typingSpeed={80}
+                pauseDuration={1500}
+                showCursor
+                cursorCharacter=""
+                variableSpeedEnabled={false}
+                variableSpeedMin={60}
+                variableSpeedMax={120}
+                cursorBlinkDuration={0.5}
+              />
+            </div>
+            <a href="mailto:aldwindukes@gmail.com">
+              <PrimaryBtn btnName="CONTACT" />
+            </a>
           </section>
-
-          <section className="mb-8">
+          <section className="mb-8" id="about">
             <hr className="text-vivid-pink mb-4" />
             <h2 className="font-bold mb-4 text-xl">About me</h2>
             <p className="mb-4">
@@ -119,8 +145,7 @@ function App() {
               <img src="src\assets\profile.jpg" alt="profile-img" />
             </div>
           </section>
-
-          <section className="mb-8">
+          <section className="mb-8" id="projects">
             <hr className="text-vivid-pink mb-4" />
             <h2 className="font-bold mb-4 text-xl">Some of my projects</h2>
             <div className="grid grid-cols-2 gap-4">
@@ -130,8 +155,7 @@ function App() {
               <div className="border border-vivid-pink p-16"></div>
             </div>
           </section>
-
-          <section>
+          <section id="contact">
             <h2 className="font-bold mb-4 text-xl text-center">
               I'd love to Connect with You.
             </h2>
@@ -140,7 +164,9 @@ function App() {
             </p>
             <hr className="text-vivid-pink mb-8" />
             <div className="flex justify-center">
-              <PrimaryBtn btnName="Get in touch" />
+              <a href="mailto:aldwindukes@gmail.com">
+                <PrimaryBtn btnName="Get in touch" />
+              </a>
             </div>
           </section>
         </main>

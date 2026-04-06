@@ -6,13 +6,28 @@ function Nav() {
     <>
       <nav className="font-sans flex justify-center flex-col font-semibold">
         <ul className="flex justify-between items-center flex-col text-xl tracking-wide sm:max-md:block">
-          <li className="p-4">HOME</li>
-          <li className="p-4">ABOUT</li>
-          <li className="p-4">CONTACT</li>
+          <li className="p-4">
+            <a href="#home">HOME</a>
+          </li>
+          <li className="p-4">
+            <a href="#about">ABOUT</a>
+          </li>
+          <li className="p-4">
+            <a href="#projects">PROJECTS</a>
+          </li>
+          <li className="p-4">
+            <a href="#contact">CONTACT</a>
+          </li>
         </ul>
 
         <div className="flex justify-center items-center mt-2">
-          <PrimaryBtn btnName="RESUME" />
+          <a
+            href="https://drive.google.com/file/d/15SQdc5WBrVmQ5-7XZU9uPR2ZEyfw9Pn5/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <PrimaryBtn btnName="RESUME" />
+          </a>
         </div>
       </nav>
     </>
