@@ -5,17 +5,17 @@ function Nav() {
   return (
     <>
       <nav className="font-sans flex justify-center flex-col font-semibold">
-        <ul className="flex justify-between items-center flex-col text-xl tracking-wide sm:max-md:block">
-          <li className="p-4">
+        <ul className="tracking-wide sm:max-md:block">
+          <li className="p-4 text-center">
             <a href="#home">HOME</a>
           </li>
-          <li className="p-4">
+          <li className="p-4 text-center">
             <a href="#about">ABOUT</a>
           </li>
-          <li className="p-4">
+          <li className="p-4 text-center">
             <a href="#projects">PROJECTS</a>
           </li>
-          <li className="p-4">
+          <li className="p-4 text-center">
             <a href="#contact">CONTACT</a>
           </li>
         </ul>

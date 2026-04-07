@@ -29,6 +29,9 @@ const TextType = ({
   onSentenceComplete,
   startOnVisible = false,
   reverseMode = false,
+  variableSpeedEnabled,
+  variableSpeedMin,
+  variableSpeedMax,
   ...props
 }) => {
   const [displayedText, setDisplayedText] = useState("");
