@@ -6,14 +6,14 @@ import { MdOutlineLightMode, MdOutlineNightlight } from "react-icons/md";
 import { IoMenu, IoCloseOutline } from "react-icons/io5";
 
 function NavigationBar({ toggleTheme, theme }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   return (
     <>
-      <header className="flex justify-between relative">
+      <header className="p-2 flex justify-between relative lg:p-4">
         <button
           className="hover:cursor-pointer"
           onClick={toggleTheme}
-          aria-label="darkMode switch button"
+          aria-label="darkMode switch"
         >
           {theme === "light" ? (
             <MdOutlineNightlight size={30} />
@@ -22,27 +22,23 @@ function NavigationBar({ toggleTheme, theme }) {
           )}
         </button>
 
-        <button className="lg:hidden">
+        <button
+          className="lg:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           {isMenuOpen ? (
-            <IoCloseOutline
-              size={30}
-              onClick={() => setIsMenuOpen(false)}
-              aria-label="close menu button"
-            />
+            <IoCloseOutline size={30} aria-label="close menu button" />
           ) : (
-            <IoMenu
-              size={30}
-              onClick={() => setIsMenuOpen(true)}
-              aria-label="open menu button"
-            />
+            <IoMenu size={30} aria-label="open menu button" />
           )}
         </button>
 
         <div
-          className={`"rounded-md flex justify-center w-full absolute p-4 top-10 flex-col backdrop-blur-none" ${theme === "dark" ? "bg-darkMode/90" : "bg-lightMode/90"} ${isMenuOpen ? "flex" : "hidden"}`}
+          className={`items-center justify-center w-full absolute p-4 left-0 top-10 backdrop-blur-none ${theme === "dark" ? "bg-darkMode/90" : "bg-lightMode/90"} ${isMenuOpen ? "flex" : "hidden"} 
+          lg:static lg:w-auto lg:items-end lg:p-0`}
         >
-          <nav className="font-sans flex justify-center flex-col font-semibold">
-            <ul className="tracking-wide sm:max-md:block lg:flex-row">
+          <nav className="font-sans flex justify-center flex-col font-semibold lg:flex-row lg:items-center">
+            <ul className="tracking-wide sm:max-md:block lg:flex">
               <li className="p-4 text-center">
                 <a href="#home">HOME</a>
               </li>
@@ -57,7 +53,7 @@ function NavigationBar({ toggleTheme, theme }) {
               </li>
             </ul>
 
-            <div className="flex justify-center items-center mt-2">
+            <div className="flex justify-center items-center mt-2 lg:mt-0">
               <a
                 href="https://drive.google.com/file/d/15SQdc5WBrVmQ5-7XZU9uPR2ZEyfw9Pn5/view?usp=sharing"
                 target="_blank"

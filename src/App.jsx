@@ -17,9 +17,9 @@ function App() {
   };
   return (
     <>
-      <div className="App p-4 font-base md:px-12 md:text-lg" id={theme}>
+      <div className="App font-base md:text-lg" id={theme}>
         <NavigationBar toggleTheme={toggleTheme} theme={theme} />
-        <main>
+        <main className="p-4">
           <section className="pt-8 mb-8" id="home">
             <p className="text-vivid-pink mb-2">Hi, my name is</p>
             <h1 className="font-bold text-2xl mb-2 md:text-4xl">
