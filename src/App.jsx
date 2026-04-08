@@ -1,19 +1,16 @@
 import { useState } from "react";
 
 // components
-import Nav from "./components/header/Nav";
+import NavigationBar from "./components/header/HeaderNav";
 import PrimaryBtn from "./components/button/PrimaryBtn";
 import TextType from "./components/animation/Typing";
-import SocialMediaAccounts from "./components/button/Socmed";
 
 // icons
-import { MdOutlineLightMode, MdOutlineNightlight } from "react-icons/md";
-import { IoMenu, IoCloseOutline } from "react-icons/io5";
+
 import { FaReact, FaNodeJs, FaJs } from "react-icons/fa";
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
@@ -21,43 +18,7 @@ function App() {
   return (
     <>
       <div className="App p-4 font-base md:px-12 md:text-lg" id={theme}>
-        <header className="flex justify-between relative">
-          <button
-            className="hover:cursor-pointer"
-            onClick={toggleTheme}
-            aria-label="darkMode switch button"
-          >
-            {theme === "light" ? (
-              <MdOutlineNightlight size={30} />
-            ) : (
-              <MdOutlineLightMode size={30} />
-            )}
-          </button>
-
-          <button>
-            {isMenuOpen ? (
-              <IoCloseOutline
-                size={30}
-                onClick={() => setIsMenuOpen(false)}
-                aria-label="close menu button"
-              />
-            ) : (
-              <IoMenu
-                size={30}
-                onClick={() => setIsMenuOpen(true)}
-                aria-label="open menu button"
-              />
-            )}
-          </button>
-
-          <div
-            className={`"rounded-md flex justify-center w-full absolute p-4 top-10 flex-col backdrop-blur-none" ${theme === "dark" ? "bg-darkMode/90" : "bg-lightMode/90"} ${isMenuOpen ? "flex" : "hidden"}`}
-          >
-            <Nav />
-            <SocialMediaAccounts />
-          </div>
-        </header>
-
+        <NavigationBar toggleTheme={toggleTheme} theme={theme} />
         <main>
           <section className="pt-8 mb-8" id="home">
             <p className="text-vivid-pink mb-2">Hi, my name is</p>
@@ -83,6 +44,7 @@ function App() {
               <PrimaryBtn btnName="CONTACT" />
             </a>
           </section>
+
           <section className="mb-8" id="about">
             <hr className="text-vivid-pink mb-4" />
             <h2 className="font-bold mb-4 text-xl md:text-3xl">About me</h2>
@@ -109,10 +71,12 @@ function App() {
                 Javascript
               </li>
             </ul>
+
             <div className="border border-vivid-pink p-8">
               <img src="src\assets\profile.jpg" alt="profile-img" />
             </div>
           </section>
+
           <section className="mb-8" id="projects">
             <hr className="text-vivid-pink mb-4" />
             <h2 className="font-bold mb-4 text-xl md:text-3xl">
@@ -125,6 +89,7 @@ function App() {
               <div className="border border-vivid-pink p-16 md:p-24"></div>
             </div>
           </section>
+
           <section id="contact">
             <h2 className="font-bold mb-4 text-xl text-center md:text-3xl">
               I'd love to Connect with You.
