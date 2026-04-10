@@ -4,7 +4,7 @@ import { useState } from "react";
 import NavigationBar from "./components/header/HeaderNav";
 import PrimaryBtn from "./components/button/PrimaryBtn";
 import TextType from "./components/animation/Typing";
-
+import ScrollIndicator from "./components/animation/SideScrollLight";
 // icons
 
 import { FaReact, FaNodeJs, FaJs } from "react-icons/fa";
@@ -19,13 +19,19 @@ function App() {
     <>
       <div className="App font-base md:text-lg" id={theme}>
         <NavigationBar toggleTheme={toggleTheme} theme={theme} />
-        <main className="p-4">
-          <section className="pt-8 mb-8" id="home">
-            <p className="text-vivid-pink mb-2">Hi, my name is</p>
-            <h1 className="font-bold text-2xl mb-2 md:text-4xl">
+        <ScrollIndicator />
+        <main className="p-4 lg:w-[80%] centerElement">
+          <section
+            className="mb-8 lg:h-screen lg:flex lg:justify-center lg:flex-col lg:gap-6"
+            id="home"
+          >
+            <p className="text-vivid-pink mb-2 lg:font-semibold">
+              Hi, my name is
+            </p>
+            <h1 className="font-bold text-2xl mb-2 md:text-4xl lg:text-7xl">
               Aldwin Duque
             </h1>
-            <div className="mb-6 h-14">
+            <div className="mb-6 h-14 lg:text-3xl lg:mb-0">
               <TextType
                 text={[
                   "I'm a junior web developer currently focusing in building and designing digital experiences.",
@@ -45,7 +51,7 @@ function App() {
             </a>
           </section>
 
-          <section className="mb-8" id="about">
+          <section className="mb-8 lg:h-screen" id="about">
             <hr className="text-vivid-pink mb-4" />
             <h2 className="font-bold mb-4 text-xl md:text-3xl">About me</h2>
             <p className="mb-4">
@@ -72,12 +78,16 @@ function App() {
               </li>
             </ul>
 
-            <div className="border border-vivid-pink p-8">
-              <img src="src\assets\profile.jpg" alt="profile-img" />
+            <div className="border border-vivid-pink p-8 w-full h-[40%]">
+              <img
+                src="src\assets\profile.jpg"
+                alt="profile-img"
+                className="object-contain w-full h-full"
+              />
             </div>
           </section>
 
-          <section className="mb-8" id="projects">
+          <section className="mb-8 lg:h-screen" id="projects">
             <hr className="text-vivid-pink mb-4" />
             <h2 className="font-bold mb-4 text-xl md:text-3xl">
               Some of my projects
@@ -90,7 +100,7 @@ function App() {
             </div>
           </section>
 
-          <section id="contact">
+          <section className="lg:h-screen" id="contact">
             <h2 className="font-bold mb-4 text-xl text-center md:text-3xl">
               I'd love to Connect with You.
             </h2>

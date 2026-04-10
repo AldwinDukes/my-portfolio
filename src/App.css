@@ -16,6 +16,10 @@
   color: var(--color-lightMode);
 }
 
+.centerElement {
+  margin: 0 auto;
+}
+
 .hidden {
   display: none;
 }

@@ -1,6 +1,7 @@
 // components
 import { useState } from "react";
 import PrimaryBtn from "../button/PrimaryBtn";
+import Socmed from "../button/Socmed";
 
 import { MdOutlineLightMode, MdOutlineNightlight } from "react-icons/md";
 import { IoMenu, IoCloseOutline } from "react-icons/io5";
@@ -9,7 +10,7 @@ function NavigationBar({ toggleTheme, theme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   return (
     <>
-      <header className="p-2 flex justify-between relative lg:p-4">
+      <header className="p-2 relative flex justify-between lg:p-4 lg:fixed lg:w-full">
         <button
           className="hover:cursor-pointer"
           onClick={toggleTheme}
@@ -33,9 +34,10 @@ function NavigationBar({ toggleTheme, theme }) {
           )}
         </button>
 
+        {/* todo: NEED TO FIX THE ISMENUOPEN STATE IT MUST BE AUTO OPEN ON LARGE SCREEN */}
         <div
           className={`items-center justify-center w-full absolute p-4 left-0 top-10 backdrop-blur-none ${theme === "dark" ? "bg-darkMode/90" : "bg-lightMode/90"} ${isMenuOpen ? "flex" : "hidden"} 
-          lg:static lg:w-auto lg:items-end lg:p-0`}
+          lg:static lg:w-auto lg:items-end lg:p-0 lg:bg-transparent`}
         >
           <nav className="font-sans flex justify-center flex-col font-semibold lg:flex-row lg:items-center">
             <ul className="tracking-wide sm:max-md:block lg:flex">
@@ -61,6 +63,9 @@ function NavigationBar({ toggleTheme, theme }) {
               >
                 <PrimaryBtn btnName="RESUME" />
               </a>
+            </div>
+            <div className="lg:left-20 lg:top-150 lg:fixed">
+              <Socmed />
             </div>
           </nav>
         </div>

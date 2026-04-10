@@ -5,7 +5,7 @@ import { FaLinkedin } from "react-icons/fa6";
 
 function SocialMediaAccounts() {
   return (
-    <div className="flex mt-8 justify-center gap-4">
+    <div className="flex mt-8 justify-center gap-4 lg:flex-col">
       <button className="p-3">
         <a href="http://github.com/AldwinDukes" target="_blank">
           <IoLogoGithub size={24} />
