@@ -19,8 +19,9 @@ function App() {
     <>
       <div className="App font-base md:text-lg" id={theme}>
         <NavigationBar toggleTheme={toggleTheme} theme={theme} />
-        <ScrollIndicator />
+
         <main className="p-4 lg:w-[80%] centerElement">
+          <ScrollIndicator />
           <section
             className="mb-8 lg:h-screen lg:flex lg:justify-center lg:flex-col lg:gap-6"
             id="home"

@@ -35,15 +35,17 @@ export default function ScrollIndicator() {
   }, []);
 
   return (
-    <nav className="sm:max-md:hidden lg:fixed lg:right-8 lg:top-1/2 lg:-translate-y-1/2 lg:h-75 lg:flex lg:flex-col lg:items-center lg:z-50">
+    <div className="fixed right-9999 lg:flex lg:fixed lg:right-8 lg:top-1/2 lg:-translate-y-1/2 lg:w-10 lg:h-72 lg:flex-col lg:items-center lg:z-50">
       {/* Base Grey Line */}
-      <div className="absolute w-[0.5] h-full bg-gray-300/20 dark:bg-gray-700 z-10" />
+      <div className="absolute w-0.5 h-full bg-gray-300/20 dark:bg-gray-700">
+        {" "}
+      </div>
 
       {/* Pink Filling Line */}
       <div
-        className="absolute top-0 w-[0.5] bg-vivid-pink z-20 transition-transform duration-100 origin-top"
+        className="absolute top-0 w-0.5 bg-vivid-pink z-20 transition-transform duration-100 origin-top"
         style={{ height: "100%", transform: `scaleY(${scrollPercent})` }}
-      />
+      ></div>
 
       {/* Dots List */}
       <ul className="h-full flex flex-col justify-between z-30">
@@ -61,6 +63,6 @@ export default function ScrollIndicator() {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 }
