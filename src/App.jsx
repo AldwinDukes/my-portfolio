@@ -32,7 +32,7 @@ function App() {
             <h1 className="font-bold text-2xl mb-2 md:text-4xl lg:text-7xl">
               Aldwin Duque
             </h1>
-            <div className="mb-6 h-14 lg:text-3xl lg:mb-0">
+            <div className="mb-2 h-14 lg:text-2xl xl:h-14">
               <TextType
                 text={[
                   "I'm a junior web developer currently focusing in building and designing digital experiences.",
@@ -79,7 +79,7 @@ function App() {
               </li>
             </ul>
 
-            <div className="border border-vivid-pink p-8 w-full h-[40%]">
+            <div className="border border-vivid-pink p-8 max-w-xl centerElement">
               <img
                 src="src\assets\profile.jpg"
                 alt="profile-img"

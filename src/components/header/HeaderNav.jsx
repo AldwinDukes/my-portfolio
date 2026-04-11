@@ -10,7 +10,7 @@ function NavigationBar({ toggleTheme, theme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   return (
     <>
-      <header className="p-2 relative flex justify-between lg:p-4 lg:pl-24 xl:pl-24 lg:fixed lg:w-full">
+      <header className="p-2 relative flex justify-between lg:p-4 xl:pl-14 lg:fixed lg:w-full">
         <button
           className="hover:cursor-pointer"
           onClick={toggleTheme}
@@ -64,7 +64,7 @@ function NavigationBar({ toggleTheme, theme }) {
                 <PrimaryBtn btnName="RESUME" />
               </a>
             </div>
-            <div className="lg:left-20 lg:top-150 lg:fixed">
+            <div className="lg:left-20 lg:top-110 lg:fixed xl:left-12">
               <Socmed />
             </div>
           </nav>
